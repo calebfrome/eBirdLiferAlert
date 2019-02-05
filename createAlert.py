@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 
 import xlrd
-import xlwt
 import subprocess
 import time
 
-get_new_data = False
+get_new_data = True
 numAlertSources = 7
 
 
