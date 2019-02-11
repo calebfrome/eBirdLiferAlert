@@ -1,7 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2bb9cb9b-eeea-4960-886e-fa1c38594bf8" name="Default Changelist" comment="" />
+    <list default="true" id="2bb9cb9b-eeea-4960-886e-fa1c38594bf8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/createAlert.py" beforeDir="false" afterPath="$PROJECT_DIR$/createAlert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getAlertData.ahk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/getAlertData.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.html" beforeDir="false" afterPath="$PROJECT_DIR$/output.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raw.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/MANIFEST.in" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/PKG-INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/biffh.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/book.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/compdoc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/formatting.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/formula.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/info.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/sheet.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/timemachine.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/xldate.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/xlsx.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/scripts-3.7/runxlrd.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/dist/xlrd-1.2.0-py3.7.egg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/acknowledgements.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/api.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/changes.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/conf.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/dates.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/development.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/formatting.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/index.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/installation.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/licenses.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/make.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/on_demand.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/references.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/unicode.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/vulnerabilities.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/examples/namesdemo.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/examples/xlrdnameAPIdemo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/scripts/runxlrd.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/setup.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/setup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/Formate.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/apachepoi_49609.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/apachepoi_52348.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/biff4_no_format_no_window2.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/err_cell_empty.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/formula_test_names.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/formula_test_sjmachin.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/issue150.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/issue20.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/merged_cells.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/picture_in_cell.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/profiles.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/ragged.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/reveng1.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/self_evaluation_report_2014-05-19.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_biffh.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_cell.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_comments_excel.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_comments_excel_sheet2.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_comments_gdocs.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_formats.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_formulas.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_missing_records.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_open_workbook.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_sheet.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_workbook.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_xldate.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_xldate_to_datetime.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_xlsx_comments.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_xlsx_parse.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/text_bar.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/xf_class.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd.egg-info/PKG-INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd.egg-info/SOURCES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd.egg-info/dependency_links.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd.egg-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/biffh.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/book.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/compdoc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/formatting.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/formula.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/info.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/sheet.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/timemachine.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/xldate.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/xlsx.py" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,49 +109,56 @@
         <counts>
           <entry key="project.closed" value="1" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.3" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="1" />
+          <entry key="py" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="1" />
+          <entry key="Python" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="19" />
-          <entry key="dummy" value="1" />
-          <entry key="py" value="155" />
+          <entry key="dummy" value="34" />
+          <entry key="py" value="3609" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="174" />
+          <entry key="PLAIN_TEXT" value="34" />
+          <entry key="Python" value="3628" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/createAlert.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1720">
-              <caret line="3" column="11" lean-forward="true" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+            <state relative-caret-position="357">
+              <caret line="69" column="47" selection-start-line="69" selection-start-column="47" selection-end-line="69" selection-end-column="47" />
               <folding>
-                <marker date="1549263469924" expanded="true" signature="524:525" ph="..." />
+                <element signature="e#25#42#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>numAlertSources</find>
+      <find>password</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -94,6 +196,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Program Files (x86)/Python37-32/Lib/codecs.py" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../OU/Grad/Data_Mining" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -152,38 +255,46 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11744966" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" weight="0.32907802" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32907802" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32907802" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32907802" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="R Packages" />
-      <window_info anchor="right" id="R Graphics" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32907802" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32907802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="R Graphics" order="3" />
+      <window_info anchor="right" id="R Packages" order="4" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://C:/Program Files (x86)/Python37-32/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="309" selection-start-line="309" selection-end-line="309" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/createAlert.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1720">
-          <caret line="3" column="11" lean-forward="true" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        <state relative-caret-position="357">
+          <caret line="69" column="47" selection-start-line="69" selection-start-column="47" selection-end-line="69" selection-end-column="47" />
           <folding>
-            <marker date="1549263469924" expanded="true" signature="524:525" ph="..." />
+            <element signature="e#25#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
