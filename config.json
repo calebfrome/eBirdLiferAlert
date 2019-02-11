@@ -1,0 +1,28 @@
+{
+	"credentials": {
+		"username": "",
+		"password": ""
+	},
+	"regions": [
+		"TX",
+		"OK",
+		"NM",
+		"AZ",
+		"UT",
+		"WY",
+		"CO",
+		"NE",
+		"KS",
+		"IA",
+		"WI",
+		"IL",
+		"MO",
+		"KY",
+		"TN",
+		"AR",
+		"MS",
+		"LA"
+	],
+	"combine": "none",
+	"aba_rare": "off"	
+}

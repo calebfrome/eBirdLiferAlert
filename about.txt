@@ -1,0 +1,16 @@
+======== eBird Lifer Alert ========
+			Caleb Frome
+
+eBird Lifer Alert is a personal project I developed to generate a customizable list of nearby birds that I haven't seen, based on eBird reports. The goal is to build upon the existing eBird alerts feature, adding customization options to make a more useful tool, though perhaps sacrificing some simplicity and ease of use.
+
+To get started using this program, you'll need Python 3 installed on your computer, plus a few other libraries (listed in the import statements at the beginning of createAlert.py). This process can be streamlined using an IDE such as PyCharm - this is particularly useful if you plan to make any changes to the code. Once that's working, you'll want to edit config.json to personalize the program. You'll have to provide your eBird username and password (don't worry, no one can access any of your local files) and the list of states you want alerts from. There are a few optional settings here as well, including:
+
+Combine
+- none:		don't combine any alerts (default)
+- county:	combine alerts of the same species within the same county (and state)
+- state:	combine alerts of the same species within the same state
+- all:		combine all alerts of the same species
+	
+Any Python IDE can easily run the program, or you can run createAlert.bat on Windows (you'll need to change edit the .bat file to set the correct directory)
+
+The entire project open-source and publicly available. If you're interested in my future plans for the project, check out the Projects tab. If you need any help getting started, have any additional suggestions, or you're interested in collaborating, let me know!

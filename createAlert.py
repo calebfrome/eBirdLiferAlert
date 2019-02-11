@@ -2,10 +2,19 @@ import subprocess
 from bs4 import BeautifulSoup
 import mechanize
 import http.cookiejar as cj
+import json
 
 alert_url_prefix = 'https://ebird.org/ebird/alert/summary?sid='
-alert_sids = {'TX': 'SN10387', 'OK': 'SN10380', 'NM': 'SN10376', 'AZ': 'SN10347', 'CO': 'SN10349', 'KS': 'SN10360',
-              'AR': 'SN10346', 'LA': 'SN10362'}
+
+alert_sids = {'AL': 'SN10344', 'AK': 'SN10345', 'AR': 'SN10346', 'AZ': 'SN10347', 'CA': 'SN10348', 'CO': 'SN10349',
+              'CT': 'SN10350', 'DC': 'SN10351', 'DE': 'SN10352', 'FL': 'SN10353', 'GA': 'SN10354', 'HI': 'SN10355',
+              'IA': 'SN10356', 'ID': 'SN10357', 'IL': 'SN10358', 'IN': 'SN10359', 'KS': 'SN10360', 'KY': 'SN10361',
+              'LA': 'SN10362', 'MA': 'SN10363', 'MD': 'SN10364', 'ME': 'SN10365', 'MI': 'SN10366', 'MN': 'SN10367',
+              'MO': 'SN10368', 'MS': 'SN10369', 'MT': 'SN10370', 'NC': 'SN10371', 'ND': 'SN10372', 'NE': 'SN10373',
+              'NH': 'SN10374', 'NJ': 'SN10375', 'NM': 'SN10376', 'NV': 'SN10377', 'NY': 'SN10378', 'OH': 'SN10379',
+              'OK': 'SN10380', 'OR': 'SN10381', 'PA': 'SN10382', 'RI': 'SN10383', 'SC': 'SN10384', 'SD': 'SN10385',
+              'TN': 'SN10386', 'TX': 'SN10387', 'UT': 'SN10388', 'VT': 'SN10389', 'VA': 'SN10390', 'WA': 'SN10391',
+              'WI': 'SN10392', 'WV': 'SN10393', 'WY': 'SN10394'}
 
 life_list_url = 'https://ebird.org/MyEBird?cmd=lifeList&listType=world&listCategory=default&time=life'
 aba_list_url = 'https://ebird.org/MyEBird?cmd=lifeList&listType=aba&listCategory=default&time=life'
@@ -42,12 +51,10 @@ def main():
     for species in exceptions_file.readlines():
         exceptions_list.append(species.strip())
 
-    # Read credentials
-    credentials = {}
-    credentials_file = open('credentials.txt')
-    credentials['username'] = credentials_file.readline().strip()
-    credentials['password'] = credentials_file.readline().strip()
+    # Read config file
+    config_data = json.load(open('config.json'))
 
+    # Create web browser
     br = mechanize.Browser()
     bcj = cj.LWPCookieJar()
     br.set_cookiejar(bcj)
@@ -66,8 +73,8 @@ def main():
     # Select the login form
     br.select_form(nr=0)
     # Set credentials
-    br.form['username'] = credentials['username']
-    br.form['password'] = credentials['password']
+    br.form['username'] = config_data['credentials']['username']
+    br.form['password'] = config_data['credentials']['password']
     # Submit the login form
     br.submit()
 
@@ -81,14 +88,14 @@ def main():
     # Scrape eBird alerts
     print('scraping eBird alerts')
     observation_list = []
-    for alert_sid in alert_sids.values():
-        alert_html = BeautifulSoup(br.open(alert_url_prefix + alert_sid).read(), 'html.parser')
+    for alert_region in config_data['regions']:
+        alert_html = BeautifulSoup(br.open(alert_url_prefix + alert_sids[alert_region]).read(), 'html.parser')
         for tr in alert_html.find_all('tr', class_='has-details'):
             species_name = str.strip(tr.findChild(class_='species-name').findChild('a').text)
             species_count = str.strip(tr.findChild(class_='count').text)
             species_date = str.strip(tr.findChild(class_='date').text)[:-10]  # truncate 'Checklist'
             species_checklist_link = 'https://ebird.org' + str.strip(tr.findChild(class_='date').findChild('a')['href'])
-            species_location = str.strip(tr.findChild(class_='location').text)
+            species_location = str.strip(tr.findChild(class_='location').text)[:-4]  # truncate 'Map'
             species_map_link = str.strip(tr.findChild(class_='location').findChild('a')['href'])
             species_county = str.strip(tr.findChild(class_='county').text)
             species_state = str.strip(tr.findChild(class_='state').text).split(',')[0]  # truncate ', United States'
@@ -115,8 +122,8 @@ def main():
             '<th>Location</th><th>Map Link</th><th>County</th><th>State</th><th>Checklist Link</th></tr>')
         for l in lifer_needs:
             output.write("<tr>")
-            for x in range(len(l.output())):
-                output.write("<td>%s</td>" % l.output()[x])
+            for td in range(len(l.output())):
+                output.write("<td>%s</td>" % l.output()[td])
             output.write("</tr>")
         output.write("</table>")
     output.write("</body></html>")

@@ -2,100 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bb9cb9b-eeea-4960-886e-fa1c38594bf8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/createAlert.py" beforeDir="false" afterPath="$PROJECT_DIR$/createAlert.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/getAlertData.ahk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/getAlertData.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credentials.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/output.html" beforeDir="false" afterPath="$PROJECT_DIR$/output.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/raw.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/MANIFEST.in" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/PKG-INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/biffh.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/book.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/compdoc.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/formatting.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/formula.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/info.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/sheet.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/timemachine.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/xldate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/lib/xlrd/xlsx.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/build/scripts-3.7/runxlrd.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/dist/xlrd-1.2.0-py3.7.egg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/acknowledgements.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/api.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/changes.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/conf.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/dates.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/development.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/formatting.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/index.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/installation.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/licenses.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/make.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/on_demand.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/references.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/unicode.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/docs/vulnerabilities.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/examples/namesdemo.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/examples/xlrdnameAPIdemo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/scripts/runxlrd.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/setup.cfg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/setup.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/Formate.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/apachepoi_49609.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/apachepoi_52348.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/base.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/biff4_no_format_no_window2.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/err_cell_empty.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/formula_test_names.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/formula_test_sjmachin.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/issue150.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/issue20.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/merged_cells.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/picture_in_cell.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/profiles.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/ragged.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/reveng1.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/self_evaluation_report_2014-05-19.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_biffh.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_cell.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_comments_excel.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_comments_excel_sheet2.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_comments_gdocs.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_formats.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_formulas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_missing_records.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_open_workbook.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_sheet.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_workbook.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_xldate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_xldate_to_datetime.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_xlsx_comments.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/test_xlsx_parse.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/text_bar.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/tests/xf_class.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd.egg-info/PKG-INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd.egg-info/SOURCES.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd.egg-info/dependency_links.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd.egg-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/biffh.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/book.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/compdoc.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/formatting.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/formula.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/info.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/sheet.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/timemachine.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/xldate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlrd-1.2.0/xlrd/xlsx.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -127,13 +36,13 @@
         <counts>
           <entry key="Python Console" value="19" />
           <entry key="dummy" value="34" />
-          <entry key="py" value="3609" />
+          <entry key="py" value="4366" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="34" />
-          <entry key="Python" value="3628" />
+          <entry key="Python" value="4385" />
         </counts>
       </usages-collector>
     </session>
@@ -143,10 +52,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/createAlert.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="69" column="47" selection-start-line="69" selection-start-column="47" selection-end-line="69" selection-end-column="47" />
+            <state relative-caret-position="1802">
+              <caret line="106" column="41" selection-start-line="106" selection-start-column="41" selection-end-line="106" selection-end-column="41" />
               <folding>
-                <element signature="e#25#42#0" expanded="true" />
+                <element signature="e#0#17#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -158,6 +67,9 @@
     <findStrings>
       <find>numAlertSources</find>
       <find>password</find>
+      <find>alert_sids</find>
+      <find>subprocess</find>
+      <find>x</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -291,10 +203,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/createAlert.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="69" column="47" selection-start-line="69" selection-start-column="47" selection-end-line="69" selection-end-column="47" />
+        <state relative-caret-position="1802">
+          <caret line="106" column="41" selection-start-line="106" selection-start-column="41" selection-end-line="106" selection-end-column="41" />
           <folding>
-            <element signature="e#25#42#0" expanded="true" />
+            <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>
