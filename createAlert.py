@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup
 import mechanize
 import http.cookiejar as cj
 import json
+import datetime
+import calendar
 
 alert_url_prefix = 'https://ebird.org/ebird/alert/summary?sid='
 alert_sids = {'AL': 'SN10344', 'AK': 'SN10345', 'AR': 'SN10346', 'AZ': 'SN10347', 'CA': 'SN10348', 'CO': 'SN10349',
@@ -19,6 +21,8 @@ life_list_url = 'https://ebird.org/MyEBird?cmd=lifeList&listType=world&listCateg
 aba_list_url = 'https://ebird.org/MyEBird?cmd=lifeList&listType=aba&listCategory=default&time=life'
 login_url = 'https://secure.birds.cornell.edu/cassso/login?service=https%3A%2F%2Febird.org%2Flogin%2Fcas%3Fportal%3Debird&locale=en_US'
 
+month_dict = {v: k for k, v in enumerate(calendar.month_abbr)}
+
 
 class Observation:
     def __init__(self, species, count, date, checklist_link, location, map_link, county, state, aba_rare):
@@ -33,8 +37,9 @@ class Observation:
         self.aba_rare = aba_rare
 
     def output(self):
-        return [self.species, self.date, self.location, '<a href=' + self.map_link + '>Map</a>', self.county,
-                self.state, '<a href=' + self.checklist_link + '>Checklist</a>']
+        return [self.species, self.date.strftime('%b %d %I:%M %p'), self.location,
+                '<a href=' + self.map_link + '>Map</a>', self.county, self.state,
+                '<a href=' + self.checklist_link + '>Checklist</a>']
 
 
 def main():
@@ -91,6 +96,7 @@ def main():
     alert_regions = config_data['regions']
     alert_regions.append('ABA' if int(config_data['aba_rare']) in [3, 4, 5] else None)
     for alert_region in alert_regions:
+        print(alert_region, end=' ')
         alert_html = BeautifulSoup(br.open(alert_url_prefix + alert_sids[alert_region]).read(), 'html.parser')
         for tr in alert_html.find_all('tr', class_='has-details'):
             species_name = str.strip(tr.findChild(class_='species-name').findChild('a').text)
@@ -99,7 +105,14 @@ def main():
                 if species_name not in aba_list.keys() or aba_list[species_name] < int(config_data['aba_rare']):
                     continue
             species_count = str.strip(tr.findChild(class_='count').text)
-            species_date = str.strip(tr.findChild(class_='date').text)[:-10]  # truncate 'Checklist'
+            date_str = str.strip(tr.findChild(class_='date').text)[:-10]  # truncate 'Checklist'
+            date_month_str = date_str[0:3]
+            date_month = month_dict[date_month_str]
+            date_day = int(date_str[4:6])
+            date_year = int(date_str[8:12])
+            date_hour = 0 if len(date_str) < 13 else int(date_str[13:15])    # some reports don't have a time
+            date_minute = 0 if len(date_str) < 13 else int(date_str[16:18])  # some reports don't have a time
+            species_date = datetime.datetime(date_year, date_month, date_day, date_hour, date_minute)
             species_checklist_link = 'https://ebird.org' + str.strip(tr.findChild(class_='date').findChild('a')['href'])
             species_location = str.strip(tr.findChild(class_='location').text)[:-4]  # truncate 'Map'
             species_map_link = str.strip(tr.findChild(class_='location').findChild('a')['href'])
@@ -118,6 +131,21 @@ def main():
     for o in observation_list:
         if o.species not in life_list and o.species not in exceptions_list and (o.species in aba_list.keys() or o.aba_rare):
             lifer_needs.append(o)
+
+    # Combine reports of the same species based on the config setting
+    combined_needs_dict = {}
+    if config_data['combine'] in ['county', 'state', 'all']:
+        for obs in lifer_needs:
+            key_location = 'all'
+            if config_data['combine'] == 'county':
+                key_location = obs.county
+            elif config_data['combine'] == 'state':
+                key_location = obs.state
+            key = (obs.species, key_location)
+            if key not in combined_needs_dict or obs.date > combined_needs_dict[key].date:
+                combined_needs_dict[key] = obs
+
+        lifer_needs = combined_needs_dict.values()
 
     # build output html file
     output = open("output.html", "w")

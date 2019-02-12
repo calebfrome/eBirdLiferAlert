@@ -23,6 +23,6 @@
 		"MS",
 		"LA"
 	],
-	"combine": "none",
+	"combine": "county",
 	"aba_rare": "4"
 }
