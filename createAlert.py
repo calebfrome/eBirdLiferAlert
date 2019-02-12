@@ -5,7 +5,6 @@ import http.cookiejar as cj
 import json
 
 alert_url_prefix = 'https://ebird.org/ebird/alert/summary?sid='
-
 alert_sids = {'AL': 'SN10344', 'AK': 'SN10345', 'AR': 'SN10346', 'AZ': 'SN10347', 'CA': 'SN10348', 'CO': 'SN10349',
               'CT': 'SN10350', 'DC': 'SN10351', 'DE': 'SN10352', 'FL': 'SN10353', 'GA': 'SN10354', 'HI': 'SN10355',
               'IA': 'SN10356', 'ID': 'SN10357', 'IL': 'SN10358', 'IN': 'SN10359', 'KS': 'SN10360', 'KY': 'SN10361',
@@ -14,16 +13,15 @@ alert_sids = {'AL': 'SN10344', 'AK': 'SN10345', 'AR': 'SN10346', 'AZ': 'SN10347'
               'NH': 'SN10374', 'NJ': 'SN10375', 'NM': 'SN10376', 'NV': 'SN10377', 'NY': 'SN10378', 'OH': 'SN10379',
               'OK': 'SN10380', 'OR': 'SN10381', 'PA': 'SN10382', 'RI': 'SN10383', 'SC': 'SN10384', 'SD': 'SN10385',
               'TN': 'SN10386', 'TX': 'SN10387', 'UT': 'SN10388', 'VT': 'SN10389', 'VA': 'SN10390', 'WA': 'SN10391',
-              'WI': 'SN10392', 'WV': 'SN10393', 'WY': 'SN10394'}
+              'WI': 'SN10392', 'WV': 'SN10393', 'WY': 'SN10394', 'ABA': 'SN10489'}
 
 life_list_url = 'https://ebird.org/MyEBird?cmd=lifeList&listType=world&listCategory=default&time=life'
 aba_list_url = 'https://ebird.org/MyEBird?cmd=lifeList&listType=aba&listCategory=default&time=life'
-
 login_url = 'https://secure.birds.cornell.edu/cassso/login?service=https%3A%2F%2Febird.org%2Flogin%2Fcas%3Fportal%3Debird&locale=en_US'
 
 
 class Observation:
-    def __init__(self, species, count, date, checklist_link, location, map_link, county, state):
+    def __init__(self, species, count, date, checklist_link, location, map_link, county, state, aba_rare):
         self.species = species
         self.count = count
         self.date = date
@@ -32,6 +30,7 @@ class Observation:
         self.map_link = map_link
         self.county = county
         self.state = state
+        self.aba_rare = aba_rare
 
     def output(self):
         return [self.species, self.date, self.location, '<a href=' + self.map_link + '>Map</a>', self.county,
@@ -40,10 +39,11 @@ class Observation:
 
 def main():
     # Read ABA checklist
-    aba_list = []
+    aba_list = {}
     aba_list_file = open('aba_list.txt')
-    for species in aba_list_file.readlines():
-        aba_list.append(species.strip())
+    for line in aba_list_file.readlines():
+        species_elements = line.strip().split(',')
+        aba_list[species_elements[0]] = int(species_elements[1])
 
     # Read exceptions
     exceptions_list = []
@@ -88,10 +88,16 @@ def main():
     # Scrape eBird alerts
     print('scraping eBird alerts')
     observation_list = []
-    for alert_region in config_data['regions']:
+    alert_regions = config_data['regions']
+    alert_regions.append('ABA' if int(config_data['aba_rare']) in [3, 4, 5] else None)
+    for alert_region in alert_regions:
         alert_html = BeautifulSoup(br.open(alert_url_prefix + alert_sids[alert_region]).read(), 'html.parser')
         for tr in alert_html.find_all('tr', class_='has-details'):
             species_name = str.strip(tr.findChild(class_='species-name').findChild('a').text)
+            # Filter out species from ABA RBA whose code is below the specified level
+            if alert_region == 'ABA':
+                if species_name not in aba_list.keys() or aba_list[species_name] < int(config_data['aba_rare']):
+                    continue
             species_count = str.strip(tr.findChild(class_='count').text)
             species_date = str.strip(tr.findChild(class_='date').text)[:-10]  # truncate 'Checklist'
             species_checklist_link = 'https://ebird.org' + str.strip(tr.findChild(class_='date').findChild('a')['href'])
@@ -99,8 +105,10 @@ def main():
             species_map_link = str.strip(tr.findChild(class_='location').findChild('a')['href'])
             species_county = str.strip(tr.findChild(class_='county').text)
             species_state = str.strip(tr.findChild(class_='state').text).split(',')[0]  # truncate ', United States'
+            species_aba_rare = (alert_region == 'ABA')
             observation_list.append(Observation(species_name, species_count, species_date, species_checklist_link,
-                                                species_location, species_map_link, species_county, species_state))
+                                                species_location, species_map_link, species_county, species_state,
+                                                species_aba_rare))
 
     # determine which species would be lifers
     print('creating custom alert')
@@ -108,7 +116,7 @@ def main():
     observation_list.sort(key=lambda x: x.species, reverse=False)
     lifer_needs = []
     for o in observation_list:
-        if o.species in aba_list and o.species not in life_list and o.species not in exceptions_list:
+        if o.species not in life_list and o.species not in exceptions_list and (o.species in aba_list.keys() or o.aba_rare):
             lifer_needs.append(o)
 
     # build output html file
