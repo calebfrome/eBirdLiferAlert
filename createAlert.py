@@ -5,6 +5,8 @@ import http.cookiejar as cj
 import json
 import datetime
 import calendar
+from win10toast import ToastNotifier
+import time
 
 alert_url_prefix = 'https://ebird.org/ebird/alert/summary?sid='
 alert_sids = {'AL': 'SN10344', 'AK': 'SN10345', 'AR': 'SN10346', 'AZ': 'SN10347', 'CA': 'SN10348', 'CO': 'SN10349',
@@ -36,9 +38,12 @@ class Observation:
         self.state = state
         self.aba_rare = aba_rare
 
+    def __eq__(self, other):
+        return self.species == other.species and self.date == other.date and self.location == other.location
+
     def output(self):
-        return [self.species, self.date.strftime('%b %d %I:%M %p'), self.location,
-                '<a href=' + self.map_link + '>Map</a>', self.county, self.state,
+        return [self.species, self.count, self.date.strftime('%b %d %I:%M %p'), self.location,
+                '<a href=' + self.map_link + '>Map</a>', self.state, self.county,
                 '<a href=' + self.checklist_link + '>Checklist</a>']
 
 
@@ -91,7 +96,7 @@ def main():
         life_list.append(str.strip(a.text))
 
     # Scrape eBird alerts
-    print('scraping eBird alerts')
+    print('scraping eBird alerts:', end=' ')
     observation_list = []
     alert_regions = config_data['regions']
     alert_regions.append('ABA' if int(config_data['aba_rare']) in [3, 4, 5] else None)
@@ -124,7 +129,7 @@ def main():
                                                 species_aba_rare))
 
     # determine which species would be lifers
-    print('creating custom alert')
+    print('\ncreating custom alert')
     observation_list.sort(key=lambda x: x.state, reverse=True)
     observation_list.sort(key=lambda x: x.species, reverse=False)
     lifer_needs = []
@@ -148,25 +153,59 @@ def main():
         lifer_needs = combined_needs_dict.values()
 
     # build output html file
-    output = open("output.html", "w")
-    output.write("<html><body><h1>eBird Lifer Alert</h1>")
+    output = open('alert.html', 'w')
+    output.write('<html><body><h1>eBird Lifer Alert</h1>')
     if len(lifer_needs) == 0:
-        output.write("<p>No lifers reported.</p>")
+        output.write('<p>No lifers reported.</p>')
     else:
-        output.write(
-            '<table border=1 style=border-collapse:collapse cellpadding=3><tr><th>Species</th><th>Date</th>'
-            '<th>Location</th><th>Map Link</th><th>County</th><th>State</th><th>Checklist Link</th></tr>')
+        output.write('<table border=1 style=border-collapse:collapse cellpadding=3><tr><th>Species</th><th>Count</th>'
+                     '<th>Date</th><th>Location</th><th>Map Link</th><th>State</th><th>County</th>'
+                     '<th>Checklist Link</th></tr>')
         for l in lifer_needs:
-            output.write("<tr>")
+            output.write('<tr>')
             for td in range(len(l.output())):
-                output.write("<td>%s</td>" % l.output()[td])
-            output.write("</tr>")
-        output.write("</table>")
-    output.write("</body></html>")
+                output.write('<td>%s</td>' % l.output()[td])
+            output.write('</tr>')
+        output.write('</table>')
+    output.write('</body></html>')
     output.close()
 
     # display the results in the browser
-    subprocess.Popen("output.html", shell=True)
+    if config_data['output'] == 'browser':
+        subprocess.Popen('alert.html', shell=True)
+
+    # load the previous alert for comparison
+    previous_alert = []
+    previous_alert_file = open('alert.txt')
+    for raw_obs in previous_alert_file.readlines():
+        obs = raw_obs.strip().split(',')
+        species = obs[0]
+        date_str = obs[2]
+        date_month = month_dict[date_str[0:3]]
+        date_year = datetime.datetime.today().year
+        if datetime.datetime.today().month == 1 and date_month == 12:
+            date_year -= 1
+        date = datetime.datetime(date_year, date_month, int(date_str[4:6]), int(date_str[7:9]), int(date_str[10:12]))
+        location = obs[3]
+        previous_alert.append(Observation(species, 0, date, '', location, '', '', '', False))
+
+    # display the results as desktop notifications
+    if config_data['output'] == 'desktop':
+        toaster = ToastNotifier()
+        for obs in lifer_needs:
+            if obs in previous_alert:
+                continue
+            toaster.show_toast(obs.species, obs.county + ', ' + obs.state + ' | ' + obs.date,
+                               icon_path='ebird_logo.ico', duration=5)
+            while toaster.notification_active():
+                time.sleep(0.1)
+
+    # write the alert to a file for future reference
+    save_data = open('alert.txt', 'w')
+    for obs in lifer_needs:
+        for item in obs.output():
+            save_data.write(str(item) + ',')
+        save_data.write('\n')
 
 
 if __name__ == '__main__':

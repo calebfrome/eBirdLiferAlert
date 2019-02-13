@@ -24,5 +24,6 @@
 		"LA"
 	],
 	"combine": "county",
-	"aba_rare": "4"
+	"aba_rare": "4",
+	"output": "desktop"
 }
