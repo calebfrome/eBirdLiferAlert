@@ -39,7 +39,8 @@ class Observation:
         self.aba_rare = aba_rare
 
     def __eq__(self, other):
-        return self.species == other.species and self.date == other.date and self.location == other.location
+        return self.species == other.species and self.date.strftime('%y%b%d%I%M') == other.date.strftime('%y%b%d%I%M') \
+            and self.location == other.location
 
     def output(self):
         return [self.species, self.count, self.date.strftime('%b %d %I:%M %p'), self.location,
@@ -115,7 +116,7 @@ def main():
             date_month = month_dict[date_month_str]
             date_day = int(date_str[4:6])
             date_year = int(date_str[8:12])
-            date_hour = 0 if len(date_str) < 13 else int(date_str[13:15])    # some reports don't have a time
+            date_hour = 0 if len(date_str) < 13 else int(date_str[13:15])  # some reports don't have a time
             date_minute = 0 if len(date_str) < 13 else int(date_str[16:18])  # some reports don't have a time
             species_date = datetime.datetime(date_year, date_month, date_day, date_hour, date_minute)
             species_checklist_link = 'https://ebird.org' + str.strip(tr.findChild(class_='date').findChild('a')['href'])
@@ -134,7 +135,8 @@ def main():
     observation_list.sort(key=lambda x: x.species, reverse=False)
     lifer_needs = []
     for o in observation_list:
-        if o.species not in life_list and o.species not in exceptions_list and (o.species in aba_list.keys() or o.aba_rare):
+        if o.species not in life_list and o.species not in exceptions_list and (
+                o.species in aba_list.keys() or o.aba_rare):
             lifer_needs.append(o)
 
     # Combine reports of the same species based on the config setting
@@ -195,7 +197,7 @@ def main():
         for obs in lifer_needs:
             if obs in previous_alert:
                 continue
-            toaster.show_toast(obs.species, obs.county + ', ' + obs.state + ' | ' + obs.date,
+            toaster.show_toast(obs.species, obs.county + ', ' + obs.state + ' | ' + obs.date.strftime('%b %d %I:%M %p'),
                                icon_path='ebird_logo.ico', duration=5)
             while toaster.notification_active():
                 time.sleep(0.1)

@@ -23,4 +23,4 @@ output
 	
 After the environment has been set up, any Python IDE can easily run the program, or you can run createAlert.bat.
 
-The entire project open-source and publicly available. If you're interested in my future plans for the project, check out the Projects tab. If you need any help getting started, have any additional suggestions, or you're interested in collaborating, let me know!
+The entire project open-source and publicly available. If you're interested in my future plans for the project, check out the Projects tab. If you need any help getting started, have any additional suggestions, find a bug, or you're interested in collaborating, let me know!
